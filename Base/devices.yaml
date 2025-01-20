@@ -1,0 +1,75 @@
+Template:
+  port: appium代理端口
+  desired_caps:
+    url: https://www.cnblogs.com/xmlbw/p/4510153.html
+    automationName: 使用的自动化测试引擎
+    platformName: 手机操作系统
+    platformVersion: 手机操作系统版本
+    deviceName: 手机类型或模拟器类型
+    appPackage: app包名
+    newCommandTimeout: 设置命令超时时间，单位：秒。达到超时时间仍未接收到新的命令时 Appium 会假设客户端退出然后自动结束会话。
+    udid: 连接的真实设备的唯一设备编号 ( Unique device identifier )
+    noReset:  不要在会话前重置应用状态。默认值false。
+    appActivity: 你要从你的应用包中启动的 Android Activity 名称。它通常需要在前面添加 . (如：使用.MainActivity 而不是 MainActivity)
+  bootstrap-port: 线程端口
+
+Test:
+  port: 4780
+  desired_caps:
+    platformName: Android
+    deviceName: 127.0.0.1:62001
+    appPackage: com.jinjilie.daxuezhang.debug
+    noReset:  !!bool False
+    platformVersion: 5.1.1
+    udid: 127.0.0.1:62001
+    appActivity: com.jinjilie.daxuezhang.functions.register.activity.WelcomeActivityM
+    newCommandTimeout: 120
+  bootstrap-port: 4783
+
+Simulator:
+  remoter_server: 127.0.0.1
+  port: 4723
+  desired_caps:
+    platformName: Android
+    automationName: UiAutomator2
+    deviceName: CNJ6R19308000447
+    appPackage: com.jinjilie.daxuezhang.debug
+    noReset:  !!bool True
+    platformVersion: 10.0.0
+    udid: CNJ6R19308000447
+    appActivity: com.jinjilie.daxuezhang.functions.register.activity.WelcomeActivityM
+    newCommandTimeout: 120
+    unicodeKeyboard: !!bool True
+    resetKeyboard: !!bool True
+  serial: CNJ6R19308000447
+  bootstrap-port: 4782
+
+Simulator2:
+  remoter_server: 127.0.0.1
+  port: 4723
+  desired_caps:
+    platformName: Android
+    automationName: UiAutomator2
+    deviceName: ec2f82a
+    appPackage: com.jinjilie.daxuezhang.debug
+    noReset:  !!bool True
+    platformVersion: 10.0.0
+    udid: ec2f82a
+    appActivity: com.jinjilie.daxuezhang.functions.register.activity.WelcomeActivityM
+    newCommandTimeout: 1200
+  bootstrap-port: 4783
+
+Simulator_iPhone8:
+  remoter_server: 192.168.26.195
+  port: 4723
+  desired_caps:
+    platformName: iOS
+    automationName: XCUITest
+    deviceName: iPhone 8
+    bundleId: com.jjl.dxz.uat
+    noReset:  !!bool False
+    platformVersion: 13.6
+    udid: E0D86B90-F66B-4D91-A409-32942023840E
+    appActivity: helloworld
+    newCommandTimeout: 120
+  bootstrap-port: 4782
