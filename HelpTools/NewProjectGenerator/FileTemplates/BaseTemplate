@@ -1,0 +1,14 @@
+from Core.ConfigOperation import ConfigOperation
+from Core.SeleniumBase import SeleniumBase
+from selenium.webdriver.common.by import By
+
+
+class {project}(SeleniumBase):
+    def __init__(self, browser=''):
+        config = ConfigOperation('./Projects/{project}/Base/config.ini').load_config()
+
+        self.url = config.get('Project', 'url')
+        self.name = '{project}'
+
+    def run_test_scenario(self, test_scenarios=None):
+        super().run_test_scenario(project='{project}', test_scenarios=test_scenarios)
